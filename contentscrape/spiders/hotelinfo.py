@@ -21,10 +21,10 @@ class HotelinfoSpider(scrapy.Spider):
                 item_review = content.xpath('div/div/div/div/span/text()').get()
                 item_location = content.css('span.soom-neighborhood::text').get()
 
-                manipulate_price_string = content.css('span.soom-price::text').get()
-                manipulate_price_string = manipulate_price_string.replace(',','')
-                item_price = int(manipulate_price_string.split()[1].split('+')[0])
-                
+                price_string = content.css('span.soom-price::text').get()
+                item_price = int(price_string[2:len(price_string)-1].replace(',',''))
+
+
                 list1 = content.css('span.yRv1-text::text').extract()
                 item_amenities = ",".join(list1)
 
