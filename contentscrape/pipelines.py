@@ -23,6 +23,8 @@ class ContentscrapePipeline(object):
         database = 'test'
         self.connection = psycopg2.connect(host=hostname, user=username, password=password, dbname=database)
         self.cur = self.connection.cursor()
+        self.cur.execute("DROP TABLE IF EXISTS hotels_content")
+        self.cur.execute("CREATE TABLE IF NOT EXISTS hotels_content (id SERIAL PRIMARY KEY,title VARCHAR NOT NULL,price int NOT NULL,review VARCHAR NOT NULL,location VARCHAR,amenities VARCHAR NOT NULL,image_link VARCHAR NOT NULL)")
 
     def close_spider(self, spider):
         self.cur.close()
@@ -48,3 +50,5 @@ class ContentscrapePipeline(object):
 
 
 # insert into hotels_content(title,price,review,location, amenities,image_link) values('Tahsin Villa',12000,'6.0 Good','Mirpur DOHS','reading books, play basketball, hard working','https://avatars.githubusercontent.com/u/29802879?s=400&u=e54e15a6d5fcb8056caf052cad4c4275d8eec863&v=4');
+
+# select * from hotels_content;

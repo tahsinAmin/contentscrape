@@ -2,7 +2,8 @@
 
 - [x] Finish creating a class naminmg, hotels_content in test database
 - [x] Able to store direct from code to postgres
-- [ ] Create table inside project
+- [x] Drops table if exist, Create table if it doesn't exist then insert.
+- [ ] Update Readme file for setting it up.
 
 # Problems and solution
 
