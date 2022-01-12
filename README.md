@@ -1,9 +1,20 @@
+# Setup
+
+Reconfigure the postgres connection of this project with your given postgres username and password in contentscrape.pipeline.py file and write the following code in the terminal
+
+```
+scrapy crawl hotelinfo
+```
+
 # Tasks
 
 - [x] Finish creating a class naminmg, hotels_content in test database
 - [x] Able to store direct from code to postgres
 - [x] Drops table if exist, Create table if it doesn't exist then insert.
-- [ ] Update Readme file for setting it up.
+- [x] Update Readme file for setting it up.
+- [ ] Adding requirements.txt
+- [ ] Which all can be fetched
+- [ ] add images as evidence
 
 # Problems and solution
 
