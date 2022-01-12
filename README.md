@@ -17,7 +17,9 @@ scrapy crawl hotelinfo
 - [x] Able to store direct from code to postgres
 - [x] Drops table if exist, Create table if it doesn't exist then insert.
 - [x] Update Readme file for setting it up.
+- [x] Works for other hotel travel plans with url, ".ksp"
 - [x] Able to store price value as integer by handling (',','$', '+')
+- [ ] Use regex in python replace()
 - [ ] Adding requirements.txt
 - [ ] Which all can be fetched
 - [ ] add images as evidence
