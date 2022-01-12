@@ -10,7 +10,7 @@ import psycopg2
 
 
 class ContentscrapePipeline(object):
-    #update username and password here
+    # Update database, username and password here
     def open_spider(self, spider):
         hostname = 'localhost'
         username = 'postgres' 

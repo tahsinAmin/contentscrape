@@ -7,7 +7,8 @@ from contentscrape.items import ContentscrapeItem
 class HotelinfoSpider(scrapy.Spider):
     name = 'hotelinfo'
     allowed_domains = ['www.kayak.co.in']
-    start_urls = ['https://www.kayak.co.in/Hyderabad-Hotels.7297.hotel.ksp/']
+    travel_plan = 'Dubai-Hotels.6080.hotel.ksp' #'Hyderabad-Hotels.7297.hotel.ksp'
+    start_urls = [f'https://www.kayak.co.in/{travel_plan}/']
 
     def parse(self, response):
         counter = 1
@@ -21,6 +22,7 @@ class HotelinfoSpider(scrapy.Spider):
                 item_location = content.css('span.soom-neighborhood::text').get()
 
                 manipulate_price_string = content.css('span.soom-price::text').get()
+                manipulate_price_string = manipulate_price_string.replace(',','')
                 item_price = int(manipulate_price_string.split()[1].split('+')[0])
                 
                 list1 = content.css('span.yRv1-text::text').extract()
